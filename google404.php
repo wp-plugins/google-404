@@ -4,7 +4,7 @@
 
 /*
 Plugin Name: Google 404
-Plugin URI: http://www.benhuson.co.uk/
+Plugin URI: http://wordpress.org/extend/plugins/google-404/
 Description: Adds a Google 404 widget to your missing 'page not found' pages.
 Author: Ben Huson
 Version: 1.0
