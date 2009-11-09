@@ -4,7 +4,7 @@ Donate link: http://www.benhuson.co.uk/wordpress-plugins/google-404/
 Tags: google, 404, error
 Requires at least: 2.5
 Tested up to: 2.6.2
-Stable tag: 1.0
+Stable tag: 1.0.1
 
 Adds a Google 404 widget to your missing 'page not found' pages.
 
