@@ -1,6 +1,6 @@
 === Google 404  ===
 Contributors: Ben Huson
-Donate link: http://www.benhuson.co.uk/wordpress-plugins/
+Donate link: http://www.benhuson.co.uk/wordpress-plugins/google-404/
 Tags: google, 404, error
 Requires at least: 2.5
 Tested up to: 2.6.2
@@ -41,11 +41,19 @@ You should first set up a [Google webmaster account](http://www.google.com/webma
 3. Enable in WordPress by visiting the "Plugins" menu and activating it.
 4. Add the following code to your 404.php template.
 
-<?php if (function_exists('google404')) google404(); ?>
+`<?php if ( function_exists('google404') ) google404(); ?>'
+
+You could also add this code to your theme's index.php, single.php, image.php, archive.php and search.php below the HTML that is displayed if no posts are present (where you insert this may vary from theme to theme).
+
+== Changelog ==
+
+= 1.0.1 =
+* Added documentation to readme file.
+
+= 1.0 =
+* First release.
 
 == License ==
-
-Copyright (C) 2008 Ben Huson
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
