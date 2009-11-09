@@ -41,7 +41,7 @@ You should first set up a [Google webmaster account](http://www.google.com/webma
 3. Enable in WordPress by visiting the "Plugins" menu and activating it.
 4. Add the following code to your 404.php template.
 
-`<?php if ( function_exists('google404') ) google404(); ?>'
+`<?php if ( function_exists('google404') ) google404(); ?>`
 
 You could also add this code to your theme's index.php, single.php, image.php, archive.php and search.php below the HTML that is displayed if no posts are present (where you insert this may vary from theme to theme).
 
