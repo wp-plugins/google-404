@@ -3,7 +3,7 @@ Contributors: Ben Huson
 Donate link: http://www.benhuson.co.uk/wordpress-plugins/google-404/
 Tags: google, 404, error
 Requires at least: 2.5
-Tested up to: 2.6.2
+Tested up to: 2.8.5
 Stable tag: 1.0.1
 
 Adds a Google 404 widget to your missing 'page not found' pages.
@@ -44,6 +44,14 @@ You should first set up a [Google webmaster account](http://www.google.com/webma
 `<?php if ( function_exists('google404') ) google404(); ?>`
 
 You could also add this code to your theme's index.php, single.php, image.php, archive.php and search.php below the HTML that is displayed if no posts are present (where you insert this may vary from theme to theme).
+
+== Frequently Asked Questions ==
+
+No FAQs yet.
+
+== Screenshots ==
+
+No Screenshots yet.
 
 == Changelog ==
 
