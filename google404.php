@@ -62,12 +62,20 @@ class Google404 {
 			#goog-wm ul { margin:1em 0; }
 			</style>';
 		$output .= '<script type="text/javascript">
-			var GOOG_FIXURL_LANG = "en_GB";
-			var GOOG_FIXURL_SITE = "' . get_bloginfo( 'url' ) . '";
+			var GOOG_FIXURL_LANG = \'' . $this->get_language() . '\';
+			var GOOG_FIXURL_SITE = \'' . get_bloginfo( 'url' ) . '\';
 			</script>';
 		$output .= '<script type="text/javascript" src="http://linkhelp.clients.google.com/tbproxy/lh/wm/fixurl.js"></script>';
 		
 		return $output;
+	}
+	
+	function get_language() {
+		$wp_lang = get_bloginfo( 'language' );
+		if ( array_key_exists( $wp_lang, $this->langs ) ) {
+			return $wp_lang;
+		}
+		return 'en';
 	}
 	
 }
