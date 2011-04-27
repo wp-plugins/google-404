@@ -54,21 +54,29 @@ class Google404 {
 		'vi'    => 'Vietnamese'
 	);
 	
+	function google_output() {
+	
+		$output = '<style type="text/css">
+			#goog-wm .other-things { }
+			#goog-wm ul, #goog-wm ul li { list-style:none; display:block; padding:0px; margin:0px; }
+			#goog-wm ul { margin:1em 0; }
+			</style>';
+		$output .= '<script type="text/javascript">
+			var GOOG_FIXURL_LANG = "en_GB";
+			var GOOG_FIXURL_SITE = "' . get_bloginfo( 'url' ) . '";
+			</script>';
+		$output .= '<script type="text/javascript" src="http://linkhelp.clients.google.com/tbproxy/lh/wm/fixurl.js"></script>';
+		
+		return $output;
+	}
+	
 }
 
+$Google404 = new Google404();
+
 function google404() {
-
-	echo '<style type="text/css">
-		#goog-wm .other-things { }
-		#goog-wm ul, #goog-wm ul li { list-style:none; display:block; padding:0px; margin:0px; }
-		#goog-wm ul { margin:1em 0; }
-		</style>';
-	echo '<script type="text/javascript">
-		var GOOG_FIXURL_LANG = "en_GB";
-		var GOOG_FIXURL_SITE = "' . get_bloginfo( 'url' ) . '";
-		</script>';
-	echo '<script type="text/javascript" src="http://linkhelp.clients.google.com/tbproxy/lh/wm/fixurl.js"></script>';
-
+	global $Google404;
+	echo $Google404->google_output();
 }
 
 ?>
