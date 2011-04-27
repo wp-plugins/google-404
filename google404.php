@@ -9,6 +9,53 @@ Version: 1.0.2
 Author URI: http://www.benhuson.co.uk/
 */
 
+class Google404 {
+
+	var $langs = array(
+		'ar'    => 'Arabic',
+		'bg'    => 'Bulgarian',
+		'ca'    => 'Catalan',
+		'zh-CN' => 'Chinese (China)',
+		'zh-TW' => 'Chinese (Taiwan)',
+		'hr'    => 'Croatian',
+		'cz'    => 'Czech',
+		'da'    => 'Danish',
+		'nl'    => 'Dutch',
+		'en'    => 'English',
+		'en-GB' => 'English (United Kingdom)',
+		'fi'    => 'Finnish',
+		'fr'    => 'French',
+		'de'    => 'German',
+		'el'    => 'Greek',
+		'iw'    => 'Hebrew',
+		'hi'    => 'Hindi',
+		'hu'    => 'Hungarian',
+		'in'    => 'Indonesian',
+		'it'    => 'Italian',
+		'ja'    => 'Japanese',
+		'ko'    => 'Korean',
+		'lv'    => 'Latvian',
+		'lt'    => 'Lithuanian',
+		'no'    => 'Norwegian',
+		'pl'    => 'Polish',
+		'pt-BR' => 'Portuguese (Brazil)',
+		'pt-PT' => 'Portuguese (Portugal)',
+		'ro'    => 'Romanian',
+		'ru'    => 'Russian',
+		'sr'    => 'Serbian',
+		'sk'    => 'Slovak',
+		'sl'    => 'Slovenian',
+		'es'    => 'Spanish',
+		'sv'    => 'Swedish',
+		'fil'   => 'Tagalog',
+		'th'    => 'Thai',
+		'tr'    => 'Turkish',
+		'uk'    => 'Ukrainian',
+		'vi'    => 'Vietnamese'
+	);
+	
+}
+
 function google404() {
 
 	echo '<style type="text/css">
