@@ -1,12 +1,13 @@
 === Google 404  ===
-Contributors: Ben Huson
+Contributors: husobj
 Donate link: http://www.benhuson.co.uk/wordpress-plugins/google-404/
 Tags: google, 404, error
 Requires at least: 2.5
-Tested up to: 2.8.5
-Stable tag: 1.0.1
+Tested up to: 3.1.2
+Stable tag: 1.0.2
+License: GPLv2 or later
 
-Adds a Google 404 widget to your missing 'page not found' pages.
+Allows you to add a Google 404 widget to your missing 'page not found' pages which allows you to do a Google search of the site.
 
 == Description ==
 
@@ -41,13 +42,9 @@ You should first set up a [Google webmaster account](http://www.google.com/webma
 3. Enable in WordPress by visiting the "Plugins" menu and activating it.
 4. Add the following code to your 404.php template.
 
-`<?php if ( function_exists('google404') ) google404(); ?>`
+`<?php if ( function_exists( 'google404' ) ) google404(); ?>`
 
 You could also add this code to your theme's index.php, single.php, image.php, archive.php and search.php below the HTML that is displayed if no posts are present (where you insert this may vary from theme to theme).
-
-== Frequently Asked Questions ==
-
-No FAQs yet.
 
 == Screenshots ==
 
@@ -55,8 +52,14 @@ No Screenshots yet.
 
 == Changelog ==
 
+= 1.0.2 =
+* Added GPL License info.
+* Try to use current WordPress language before defaulting to English.
+* Moved all functionality into class.
+* Update styles.
+
 = 1.0.1 =
-* Added documentation to readme file.
+* Added documentation to read me file.
 
 = 1.0 =
 * First release.
@@ -70,7 +73,9 @@ of the License, or (at your option) any later version.
 
 This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
-http://www.gnu.org/licenses/gpl.html
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
