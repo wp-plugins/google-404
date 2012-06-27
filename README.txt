@@ -20,8 +20,9 @@ The Google 404 widget is a quick and easy way to embed a search box on your cust
 You should set up a [Google webmaster account](http://www.google.com/webmasters/ "Google") and submit an XML sitemap of your blog to ensure the Google 404 widget works effectively.
 
 Find out more:
-* [Customizing your 404 page](http://www.google.com/support/webmasters/bin/answer.py?answer=93644&cbid=-he7hb1tg6az&src=cb&lev=answer "Google")
-* [Make your 404 pages more useful](http://googlewebmastercentral.blogspot.co.uk/2008/08/make-your-404-pages-more-useful.html "Google")
+* WordPress: [Creating an Error 404 Page(http://codex.wordpress.org/Creating_an_Error_404_Page) "WordPress"]
+* Google: [Customizing your 404 page](http://www.google.com/support/webmasters/bin/answer.py?answer=93644&cbid=-he7hb1tg6az&src=cb&lev=answer "Google")
+* Google: [Make your 404 pages more useful](http://googlewebmastercentral.blogspot.co.uk/2008/08/make-your-404-pages-more-useful.html "Google")
 
 = Please note =
 
