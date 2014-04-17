@@ -2,9 +2,9 @@
 
 /*
 Plugin Name: Google 404
-Plugin URI: http://www.benhuson.co.uk/wordpress-plugins/google-404/
-Description: Adds a Google 404 widget to your missing 'page not found' pages.
-Version: 1.0.2
+Plugin URI: https://github.com/benhuson/google-404
+Description: Adds a <a href="https://support.google.com/webmasters/answer/136085">Google 404 widget</a> to your 'page not found' template which you can <a href="https://support.google.com/webmasters/answer/100044">customize</a>.
+Version: 1.1
 Author: Ben Huson
 Author URI: http://www.benhuson.co.uk/
 License: GPLv2 or later
@@ -28,80 +28,125 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 class Google404 {
 
-	var $langs = array(
-		'ar'    => 'Arabic',
-		'bg'    => 'Bulgarian',
-		'ca'    => 'Catalan',
-		'zh-CN' => 'Chinese (China)',
-		'zh-TW' => 'Chinese (Taiwan)',
-		'hr'    => 'Croatian',
-		'cz'    => 'Czech',
-		'da'    => 'Danish',
-		'nl'    => 'Dutch',
-		'en'    => 'English',
-		'en-GB' => 'English (United Kingdom)',
-		'fi'    => 'Finnish',
-		'fr'    => 'French',
-		'de'    => 'German',
-		'el'    => 'Greek',
-		'iw'    => 'Hebrew',
-		'hi'    => 'Hindi',
-		'hu'    => 'Hungarian',
-		'in'    => 'Indonesian',
-		'it'    => 'Italian',
-		'ja'    => 'Japanese',
-		'ko'    => 'Korean',
-		'lv'    => 'Latvian',
-		'lt'    => 'Lithuanian',
-		'no'    => 'Norwegian',
-		'pl'    => 'Polish',
-		'pt-BR' => 'Portuguese (Brazil)',
-		'pt-PT' => 'Portuguese (Portugal)',
-		'ro'    => 'Romanian',
-		'ru'    => 'Russian',
-		'sr'    => 'Serbian',
-		'sk'    => 'Slovak',
-		'sl'    => 'Slovenian',
-		'es'    => 'Spanish',
-		'sv'    => 'Swedish',
-		'fil'   => 'Tagalog',
-		'th'    => 'Thai',
-		'tr'    => 'Turkish',
-		'uk'    => 'Ukrainian',
-		'vi'    => 'Vietnamese'
-	);
-	
-	function google_output() {
-	
-		$output = '<style type="text/css">
-			#goog-wm .other-things { }
+	/**
+	 * Google Output
+	 *
+	 * Returns the Google 404 widget styles and script.
+	 *
+	 * @since  1.0.2
+	 *
+	 * @return  string  Style and script output.
+	 */
+	static function google_output() {
+		return Google404::get_widget_styles() . Google404::get_widget_script();
+	}
+
+	/**
+	 * Get Widget Styles
+	 *
+	 * @since  1.1
+	 *
+	 * @return  string  Widget styles.
+	 */
+	static function get_widget_styles() {
+		$styles = '#goog-wm .other-things { }
 			#goog-wm ul, #goog-wm ul li { list-style:none; display:block; padding:0px; margin:0px; }
-			#goog-wm ul { margin:1em 0; }
-			</style>';
-		$output .= '<script type="text/javascript">
-			var GOOG_FIXURL_LANG = \'' . $this->get_language() . '\';
-			var GOOG_FIXURL_SITE = \'' . get_bloginfo( 'url' ) . '\';
-			</script>';
-		$output .= '<script type="text/javascript" src="http://linkhelp.clients.google.com/tbproxy/lh/wm/fixurl.js"></script>';
-		
-		return $output;
+			#goog-wm ul { margin:1em 0; }';
+		return '<style type="text/css">' . apply_filters( 'google_404_styles', $styles ) . '</style>';
 	}
-	
-	function get_language() {
+
+	/**
+	 * Get Widget Script
+	 *
+	 * @since  1.1
+	 *
+	 * @return  string  Widget JavaScript.
+	 */
+	static function get_widget_script() {
+		return '<script type="text/javascript">
+			var GOOG_FIXURL_LANG = \'' . Google404::get_language() . '\';
+			var GOOG_FIXURL_SITE = \'' . home_url( '/' ) . '\';
+			</script>
+			<script type="text/javascript" src="http://linkhelp.clients.google.com/tbproxy/lh/wm/fixurl.js"></script>';
+	}
+
+	/**
+	 * Get Language (code)
+	 *
+	 * @since  1.0.2
+	 *
+	 * @return  string  Language code.
+	 */
+	static function get_language() {
+		$lang = 'en';
 		$wp_lang = get_bloginfo( 'language' );
-		if ( array_key_exists( $wp_lang, $this->langs ) ) {
-			return $wp_lang;
+		if ( array_key_exists( $wp_lang, Google404::get_languages() ) ) {
+			$lang = $wp_lang;
 		}
-		return 'en';
+		return apply_filters( 'google_404_language', $lang );
 	}
-	
+
+	/**
+	 * Get Languages
+	 *
+	 * @since  1.1
+	 *
+	 * @return  array  Array of language codes and names.
+	 */
+	static function get_languages() {
+		return array(
+			'ar'    => __( 'Arabic', 'google-404' ),
+			'bg'    => __( 'Bulgarian', 'google-404' ),
+			'ca'    => __( 'Catalan', 'google-404' ),
+			'zh-CN' => __( 'Chinese (China)', 'google-404' ),
+			'zh-TW' => __( 'Chinese (Taiwan)', 'google-404' ),
+			'hr'    => __( 'Croatian', 'google-404' ),
+			'cz'    => __( 'Czech', 'google-404' ),
+			'da'    => __( 'Danish', 'google-404' ),
+			'nl'    => __( 'Dutch', 'google-404' ),
+			'en'    => __( 'English', 'google-404' ),
+			'en-GB' => __( 'English (United Kingdom)', 'google-404' ),
+			'fi'    => __( 'Finnish', 'google-404' ),
+			'fr'    => __( 'French', 'google-404' ),
+			'de'    => __( 'German', 'google-404' ),
+			'el'    => __( 'Greek', 'google-404' ),
+			'iw'    => __( 'Hebrew', 'google-404' ),
+			'hi'    => __( 'Hindi', 'google-404' ),
+			'hu'    => __( 'Hungarian', 'google-404' ),
+			'in'    => __( 'Indonesian', 'google-404' ),
+			'it'    => __( 'Italian', 'google-404' ),
+			'ja'    => __( 'Japanese', 'google-404' ),
+			'ko'    => __( 'Korean', 'google-404' ),
+			'lv'    => __( 'Latvian', 'google-404' ),
+			'lt'    => __( 'Lithuanian', 'google-404' ),
+			'no'    => __( 'Norwegian', 'google-404' ),
+			'pl'    => __( 'Polish', 'google-404' ),
+			'pt-BR' => __( 'Portuguese (Brazil)', 'google-404' ),
+			'pt-PT' => __( 'Portuguese (Portugal)', 'google-404' ),
+			'ro'    => __( 'Romanian', 'google-404' ),
+			'ru'    => __( 'Russian', 'google-404' ),
+			'sr'    => __( 'Serbian', 'google-404' ),
+			'sk'    => __( 'Slovak', 'google-404' ),
+			'sl'    => __( 'Slovenian', 'google-404' ),
+			'es'    => __( 'Spanish', 'google-404' ),
+			'sv'    => __( 'Swedish', 'google-404' ),
+			'fil'   => __( 'Tagalog', 'google-404' ),
+			'th'    => __( 'Thai', 'google-404' ),
+			'tr'    => __( 'Turkish', 'google-404' ),
+			'uk'    => __( 'Ukrainian', 'google-404' ),
+			'vi'    => __( 'Vietnamese', 'google-404' )
+		);
+	}
+
 }
 
-$Google404 = new Google404();
-
+/**
+ * Google 404
+ *
+ * Outputs the Google 404 widget styles and script.
+ *
+ * @since  1.0
+ */
 function google404() {
-	global $Google404;
-	echo $Google404->google_output();
+	echo Google404::google_output();
 }
-
-?>

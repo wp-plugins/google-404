@@ -1,11 +1,12 @@
 === Google 404  ===
 Contributors: husobj
 Donate link: http://www.benhuson.co.uk/wordpress-plugins/google-404/
-Tags: google, 404, error
+Tags: google, 404, error, adopt-me
 Requires at least: 2.5
-Tested up to: 3.1.2
-Stable tag: 1.0.2
+Tested up to: 3.9
+Stable tag: 1.1
 License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Allows you to add a Google 404 widget to your missing 'page not found' pages which allows you to do a Google search of the site.
 
@@ -19,23 +20,23 @@ The Google 404 widget is a quick and easy way to embed a search box on your cust
 
 You should set up a [Google webmaster account](http://www.google.com/webmasters/ "Google") and submit an XML sitemap of your blog to ensure the Google 404 widget works effectively.
 
-Find out more [here...](http://www.google.com/support/webmasters/bin/answer.py?answer=93644&cbid=-he7hb1tg6az&src=cb&lev=answer "Google")
+Find out more [here...](https://support.google.com/webmasters/answer/136085)
+
+= Features =
+
+Currently the plugin outputs the Google 404 widget in US English by default, or tries to use the current WordPress language.
+You can use the `google_404_language` filter to specify a different language code.
+
+Also looking to add the possiblity to [change the appearance](https://support.google.com/webmasters/answer/100044) of the widget.
 
 = Please note =
 
 The Google 404 widget plugin is NOT a WordPress widget.
 It is simply the term Google use to describe their enhanced 404 page script.
 
-== Features ==
-
-Currently the plugin only outputs the Google 404 widget in English (UK).
-Will hopefully add support for other languages in future versions.
-
-Also looking to add the possiblity to [change the appearance](http://www.google.com/support/webmasters/bin/answer.py?answer=100044&cbid=-1p0j7f68xlmqq&src=cb&lev=answer "Google") of the widget.
-
 == Installation ==
 
-You should first set up a [Google webmaster account](http://www.google.com/webmasters/ "Google") and submit an XML sitemap of your blog to ensure the Google 404 widget works effectively.
+You should first set up a [Google webmaster account](http://www.google.com/webmasters/ "Google") and submit an XML sitemap of your site to ensure the Google 404 widget works effectively.
 
 1. Download the archive file and uncompress it.
 2. Put the "google404" folder in "wp-content/plugins"
@@ -46,11 +47,19 @@ You should first set up a [Google webmaster account](http://www.google.com/webma
 
 You could also add this code to your theme's index.php, single.php, image.php, archive.php and search.php below the HTML that is displayed if no posts are present (where you insert this may vary from theme to theme).
 
+== Frequently Asked Questions ==
+
+Currently no FAQs.
+
 == Screenshots ==
 
 No Screenshots yet.
 
 == Changelog ==
+
+= 1.1 =
+* Added 'google_404_language' filter.
+* Added 'google_404_styles' filter.
 
 = 1.0.2 =
 * Added GPL License info.
@@ -64,18 +73,10 @@ No Screenshots yet.
 = 1.0 =
 * First release.
 
-== License ==
+== Upgrade Notice ==
 
-This program is free software; you can redistribute it and/or
-modify it under the terms of the GNU General Public License
-as published by the Free Software Foundation; either version 2
-of the License, or (at your option) any later version.
+= 1.1 =
+Added 'google_404_language' and 'google_404_styles' filters.
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program; if not, write to the Free Software
-Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+= 1.0.2 =
+Try to use current WordPress language before defaulting to English.
