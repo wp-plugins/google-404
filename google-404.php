@@ -1,13 +1,12 @@
 <?php
-
-/*
-Plugin Name: Google 404
-Plugin URI: https://github.com/benhuson/google-404
-Description: Adds a <a href="https://support.google.com/webmasters/answer/136085">Google 404 widget</a> to your 'page not found' template which you can <a href="https://support.google.com/webmasters/answer/100044">customize</a>.
-Version: 1.1
-Author: Ben Huson
-Author URI: http://www.benhuson.co.uk/
-License: GPLv2 or later
+/**
+ * Plugin Name: Google 404
+ * Plugin URI: http://www.binarytemplar.com/google-404
+ * Description: Adds a <a href="https://support.google.com/webmasters/answer/136085">Google 404 widget</a> to your 'page not found' template which you can <a href="https://support.google.com/webmasters/answer/100044">customize</a>.
+ * Version: 2.0
+ * Author: Dave McHale
+ * Author URI: http://www.binarytemplar.com/
+ * License: GPLv2 or later
 */
 
 /*
